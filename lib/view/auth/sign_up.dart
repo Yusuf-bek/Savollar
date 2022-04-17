@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
-import 'package:savollar/view/auth/sign_up.dart';
 
-class SignInPage extends StatelessWidget {
-  SignInPage({Key? key}) : super(key: key);
+class SignUpPage extends StatelessWidget {
+  SignUpPage({Key? key}) : super(key: key);
   final TextEditingController _usernameController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
 
@@ -16,7 +15,7 @@ class SignInPage extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           const Text(
-            "Savollarga hush kelibsiz!",
+            "Registering to Savollar!",
             style: TextStyle(
               fontSize: 30,
               color: Colors.white,
@@ -100,13 +99,7 @@ class SignInPage extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(
-            width: MediaQuery.of(context).size.width,
-            height: getHeightConfig(130),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                InkWell(
+             InkWell(
                   onTap: () {},
                   child: Container(
                     width: getWidthConfig(300),
@@ -119,7 +112,7 @@ class SignInPage extends StatelessWidget {
                     ),
                     child: Center(
                       child: Text(
-                        "Log in",
+                        "Register",
                         style: TextStyle(
                           color: Colors.white,
                           fontSize: getWidthConfig(20),
@@ -128,26 +121,8 @@ class SignInPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                TextButton(
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) => SignUpPage()),
-                      ),
-                    );
-                  },
-                  child: Text(
-                    "Register",
-                    style: TextStyle(
-                      fontSize: getWidthConfig(20),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-        ],
+               
+       ],
       ),
     );
   }
