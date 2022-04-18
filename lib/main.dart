@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:savollar/view/auth/sign_in.dart';
-import 'package:savollar/view/home/home_page.dart';
+import 'package:savollar/view/solve/solving_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +16,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: HomePage(),
+      home: SolvingPage(),
     );
   }
 }

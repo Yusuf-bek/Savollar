@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
-import 'package:savollar/core/widgets/category_contianer.dart';
+import 'package:savollar/core/widgets/category_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
