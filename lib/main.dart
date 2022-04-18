@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:savollar/router/route_generator.dart';
 import 'package:savollar/view/solve/solving_page.dart';
 
 void main() {
@@ -16,7 +17,8 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.green,
       ),
-      home: SolvingPage(),
+      initialRoute: "/signin",
+      onGenerateRoute: RouteGenerator().generate,
     );
   }
 }
