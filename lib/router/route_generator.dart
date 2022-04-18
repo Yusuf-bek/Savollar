@@ -16,7 +16,7 @@ class RouteGenerator {
           builder: ((context) => SignInPage()),
         );
 
-      case "signup":
+      case "/signup":
         return MaterialPageRoute(
           builder: (context) => SignUpPage(),
         );

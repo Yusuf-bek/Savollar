@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/router/route_generator.dart';
-import 'package:savollar/view/solve/solving_page.dart';
-
 void main() {
   runApp(const MyApp());
 }

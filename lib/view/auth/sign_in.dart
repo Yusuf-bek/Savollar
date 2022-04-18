@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
+import 'package:savollar/core/constants/text_styles.dart';
+import 'package:savollar/core/widgets/gradient_button.dart';
 import 'package:savollar/view/auth/sign_up.dart';
 
 class SignInPage extends StatelessWidget {
@@ -17,10 +19,7 @@ class SignInPage extends StatelessWidget {
         children: [
           const Text(
             "Savollarga hush kelibsiz!",
-            style: TextStyle(
-              fontSize: 30,
-              color: Colors.white,
-            ),
+            style: MyTextStyles.welcomeText,
           ),
           SizedBox(
             width: MediaQuery.of(context).size.width,
@@ -106,36 +105,15 @@ class SignInPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: getWidthConfig(300),
-                    height: getHeightConfig(60),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.green, Colors.blue.withOpacity(0.3)],
-                      ),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Log in",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: getWidthConfig(20),
-                        ),
-                      ),
-                    ),
-                  ),
+                
+                GradientButton(
+                  buttonText: "Log in",
                 ),
+
+                // NavigateToRegistrationButton
                 TextButton(
                   onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: ((context) => SignUpPage()),
-                      ),
-                    );
+                    Navigator.pushNamed(context, "/signup");
                   },
                   child: Text(
                     "Register",
@@ -152,3 +130,4 @@ class SignInPage extends StatelessWidget {
     );
   }
 }
+

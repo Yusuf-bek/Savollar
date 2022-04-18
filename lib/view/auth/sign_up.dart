@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
+import 'package:savollar/core/widgets/gradient_button.dart';
 
 class SignUpPage extends StatelessWidget {
   SignUpPage({Key? key}) : super(key: key);
@@ -99,29 +100,7 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
           ),
-             InkWell(
-                  onTap: () {},
-                  child: Container(
-                    width: getWidthConfig(300),
-                    height: getHeightConfig(60),
-                    decoration: BoxDecoration(
-                      gradient: LinearGradient(
-                        colors: [Colors.green, Colors.blue.withOpacity(0.3)],
-                      ),
-                      borderRadius: BorderRadius.circular(15),
-                    ),
-                    child: Center(
-                      child: Text(
-                        "Register",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: getWidthConfig(20),
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-               
+          GradientButton(buttonText: "Register"),
        ],
       ),
     );
