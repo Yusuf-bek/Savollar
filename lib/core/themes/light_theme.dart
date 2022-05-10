@@ -17,4 +17,25 @@ ThemeData lightTheme = ThemeData(
     
   ),
 
+  inputDecorationTheme: const InputDecorationTheme(
+    enabledBorder: OutlineInputBorder(
+      borderRadius:  BorderRadius.all(
+        Radius.circular(10),
+      ),
+      borderSide: BorderSide(
+        color: Colors.grey,
+        width: 2,
+      ),
+    ),
+    focusedBorder: OutlineInputBorder(
+      borderRadius: BorderRadius.all(
+        Radius.circular(10),
+      ),
+      borderSide: BorderSide(
+        color: Colors.green,
+        width: 2,
+      ),
+    ),
+  ),
+
 );

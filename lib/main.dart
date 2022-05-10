@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:savollar/core/themes/dark_theme.dart';
 import 'package:savollar/router/route_generator.dart';
+
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const MyApp(),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -15,7 +18,7 @@ class MyApp extends StatelessWidget {
       title: 'Savollar',
       theme: darkTheme,
       initialRoute: "/signin",
-      onGenerateRoute: RouteGenerator().generate,
+      onGenerateRoute: RouteGenerator.instance.generate,
     );
   }
 }
