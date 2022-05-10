@@ -3,18 +3,18 @@ import 'package:savollar/core/components/size_config/size_config.dart';
 
 class GradientButton extends StatelessWidget {
   String buttonText;
+  Function() onTap;
   GradientButton({
     Key? key,
     required this.buttonText,
+    required this.onTap,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return InkWell(
-      onTap: () {
-        Navigator.pushNamed(context, "/");
-      },
+      onTap: onTap,
       child: Container(
         width: getWidthConfig(300),
         height: getHeightConfig(60),

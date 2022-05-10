@@ -11,7 +11,7 @@ class SignUpPage extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 48, 48, 73),
+    
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -34,29 +34,11 @@ class SignUpPage extends StatelessWidget {
                 children: [
                   TextFormField(
                     style: const TextStyle(color: Colors.white),
-                    decoration: InputDecoration(
-                      label: const Text(
+                    decoration: const InputDecoration(
+                      label:  Text(
                         "Username",
                         style: TextStyle(
                           color: Colors.white,
-                        ),
-                      ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                          width: getWidthConfig(2),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.green,
-                          width: 2,
                         ),
                       ),
                     ),
@@ -73,25 +55,7 @@ class SignUpPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                          width: 2,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.green,
-                          width: 2,
-                        ),
-                      ),
-                    ),
+                   ),
                     controller: _passwordController,
                     validator: (value) {},
                     onChanged: (value) {},
@@ -100,8 +64,13 @@ class SignUpPage extends StatelessWidget {
               ),
             ),
           ),
-          GradientButton(buttonText: "Register"),
-       ],
+          GradientButton(
+            buttonText: "Register",
+            onTap: () {
+              Navigator.pushNamed(context, "/");
+            },
+          ),
+        ],
       ),
     );
   }

@@ -5,5 +5,4 @@ class MyTextStyles {
     fontSize: 30,
     color: Colors.white,
   );
-  
 }

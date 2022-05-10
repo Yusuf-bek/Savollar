@@ -1,19 +1,29 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
 import 'package:savollar/core/constants/text_styles.dart';
 import 'package:savollar/core/widgets/gradient_button.dart';
-import 'package:savollar/view/auth/sign_up.dart';
+import 'package:savollar/cubit/sign_in_cubit/sign_in_cubit.dart';
+import 'package:savollar/cubit/sign_in_cubit/sign_in_states.dart';
 
 class SignInPage extends StatelessWidget {
-  SignInPage({Key? key}) : super(key: key);
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
+  const SignInPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
+    return BlocProvider(
+      create: (context) => SignInCubit(
+        SignInInitialState(),
+      ),
+      child: Builder(builder: (context) {
+        return myScaffold(context);
+      }),
+    );
+  }
+
+  Scaffold myScaffold(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 48, 48, 73),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
@@ -40,26 +50,8 @@ class SignInPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: const BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                          width: getWidthConfig(2),
-                        ),
-                      ),
-                      focusedBorder: const OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.green,
-                          width: 2,
-                        ),
-                      ),
                     ),
-                    controller: _usernameController,
+                    controller: context.read<SignInCubit>().usernameController,
                     validator: (value) {},
                     onChanged: (value) {},
                   ),
@@ -72,26 +64,8 @@ class SignInPage extends StatelessWidget {
                           color: Colors.white,
                         ),
                       ),
-                      enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.grey,
-                          width: 2,
-                        ),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.all(
-                          Radius.circular(10),
-                        ),
-                        borderSide: BorderSide(
-                          color: Colors.green,
-                          width: 2,
-                        ),
-                      ),
                     ),
-                    controller: _passwordController,
+                    controller: context.read<SignInCubit>().passwordController,
                     validator: (value) {},
                     onChanged: (value) {},
                   ),
@@ -105,9 +79,11 @@ class SignInPage extends StatelessWidget {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                
                 GradientButton(
                   buttonText: "Log in",
+                  onTap: () {
+                    Navigator.pushNamed(context, "/");
+                  },
                 ),
 
                 // NavigateToRegistrationButton
@@ -130,4 +106,3 @@ class SignInPage extends StatelessWidget {
     );
   }
 }
-

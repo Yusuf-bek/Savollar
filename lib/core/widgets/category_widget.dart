@@ -41,7 +41,7 @@ class CategoryContainer extends StatelessWidget {
                 height: getWidthConfig(150),
                 child: Image.asset(
                   assetImagePath,
-                  fit: BoxFit.cover,
+                  fit: BoxFit.fill,
                 ),
               ),
             ),
@@ -51,9 +51,10 @@ class CategoryContainer extends StatelessWidget {
               child: Text(
                 nameCategory,
                 style: TextStyle(
-                    color: Colors.white,
-                    fontSize: getWidthConfig(30),
-                    fontWeight: FontWeight.w600),
+                  color: Colors.white,
+                  fontSize: getWidthConfig(30),
+                  fontWeight: FontWeight.w600,
+                ),
               ),
             ),
             Positioned(

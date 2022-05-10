@@ -58,10 +58,16 @@ class SolvingPage extends StatelessWidget {
             endIndent: getWidthConfig(50),
             indent: getWidthConfig(50)),
         const QuestionCardWidget(),
-        SizedBox(height: getHeightConfig(20),),
-        GradientButton(buttonText: "Next"),
+        SizedBox(
+          height: getHeightConfig(20),
+        ),
+        GradientButton(
+          buttonText: "Next",
+          onTap: () {
+            
+          },
+        ),
       ],
     );
   }
 }
-

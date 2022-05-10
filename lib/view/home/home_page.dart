@@ -61,34 +61,42 @@ class HomePage extends StatelessWidget {
                 ),
               ),
               CategoryContainer(
+                key: UniqueKey(),
                 colorsToGradient: const [
-                  Colors.green,
-                  Colors.blue,
+                  Colors.orangeAccent,
+                  Colors.redAccent,
                 ],
-                assetImagePath: "assets/category_icons/biology.png",
+                assetImagePath: "assets/category_icons/colba.png",
                 nameCategory: "Chemistry",
-                onPressedPlayIcon: (){},
+                onPressedPlayIcon: () {
+                  Navigator.pushNamed(context, "/solve");
+                },
               ),
               CategoryContainer(
+                key: UniqueKey(),
                 colorsToGradient: const [
-                  
                   Colors.green,
                   Colors.blue,
                 ],
                 assetImagePath: "assets/category_icons/biology.png",
                 nameCategory: "Biology",
-                onPressedPlayIcon: (){},
+                onPressedPlayIcon: () {},
               ),
               CategoryContainer(
+                key: UniqueKey(),
                 colorsToGradient: const [
-                  Colors.green,
-                  Colors.blue,
+                  
+                  Colors.blueAccent,
+                  
+                  Colors.redAccent
                 ],
-                assetImagePath: "assets/category_icons/biology.png",
+                assetImagePath: "assets/category_icons/dart.png",
                 nameCategory: "Dart",
-                onPressedPlayIcon: (){},
+                onPressedPlayIcon: () {},
               ),
-              SizedBox(height: getHeightConfig(20),),
+              SizedBox(
+                height: getHeightConfig(20),
+              ),
             ],
           ),
         ),
@@ -96,4 +104,3 @@ class HomePage extends StatelessWidget {
     );
   }
 }
-
