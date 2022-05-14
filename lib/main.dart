@@ -17,7 +17,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Savollar',
       theme: darkTheme,
-      initialRoute: "/signin",
+      initialRoute: "/",
       onGenerateRoute: RouteGenerator.instance.generate,
     );
   }

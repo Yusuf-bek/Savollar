@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:savollar/core/components/text_styles.dart';
 
 ThemeData darkTheme = ThemeData(
   colorScheme: const ColorScheme(
@@ -14,12 +15,13 @@ ThemeData darkTheme = ThemeData(
     surface: Colors.black,
     onSurface: Colors.black38,
   ),
+
   scaffoldBackgroundColor: const Color.fromARGB(255, 48, 48, 73),
   errorColor: Colors.red,
-
+  
   inputDecorationTheme: const InputDecorationTheme(
     enabledBorder: OutlineInputBorder(
-      borderRadius:  BorderRadius.all(
+      borderRadius: BorderRadius.all(
         Radius.circular(10),
       ),
       borderSide: BorderSide(
@@ -37,5 +39,8 @@ ThemeData darkTheme = ThemeData(
       ),
     ),
   ),
- 
+  
+  textTheme: const TextTheme(
+    headline1: MyTextStyles.welcomeText,
+  ),
 );
