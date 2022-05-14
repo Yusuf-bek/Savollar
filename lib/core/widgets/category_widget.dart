@@ -19,7 +19,7 @@ class CategoryContainer extends StatelessWidget {
     SizeConfig().init(context);
     return Padding(
       padding: EdgeInsets.only(
-        top: getHeightConfig(80),
+        top: getHeightConfig(90),
       ),
       child: Container(
         width: MediaQuery.of(context).size.width * 0.9,
