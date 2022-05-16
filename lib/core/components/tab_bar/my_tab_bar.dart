@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:savollar/cubit/tab_bar_cubit/tab_bar_cubit.dart';
@@ -30,18 +31,18 @@ class MyTabBar extends StatelessWidget {
                 onTap: (value) {
                   context.read<TabBarCubit>().change(value);
                 },
-                tabs: const [
+                tabs:  [
                   Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 15,
                     ),
-                    child: Text("Home"),
+                    child: const Text("Questions").tr(),
                   ),
                   Padding(
-                    padding: EdgeInsets.symmetric(
+                    padding: const EdgeInsets.symmetric(
                       vertical: 15,
                     ),
-                    child: Text("Results"),
+                    child: const Text("Results").tr(),
                   ),
                 ],
               ),

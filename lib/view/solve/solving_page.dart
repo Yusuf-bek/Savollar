@@ -54,18 +54,17 @@ class SolvingPage extends StatelessWidget {
           ),
         ),
         Divider(
-            color: Colors.white.withOpacity(0.6),
-            endIndent: getWidthConfig(50),
-            indent: getWidthConfig(50)),
+          color: Colors.white.withOpacity(0.6),
+          endIndent: getWidthConfig(50),
+          indent: getWidthConfig(50),
+        ),
         const QuestionCardWidget(),
         SizedBox(
           height: getHeightConfig(20),
         ),
         GradientButton(
           buttonText: "Next",
-          onTap: () {
-            
-          },
+          onTap: () {},
         ),
       ],
     );

@@ -10,7 +10,9 @@ class MyTimerWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     SizeConfig().init(context);
     return Container(
-      margin: EdgeInsets.symmetric(horizontal: getWidthConfig(15)),
+      margin: EdgeInsets.symmetric(
+        horizontal: getWidthConfig(15),
+      ),
       width: double.infinity,
       height: getHeightConfig(45),
       decoration: BoxDecoration(
@@ -25,7 +27,7 @@ class MyTimerWidget extends StatelessWidget {
         children: [
           LayoutBuilder(
             builder: (context, constraints) => Container(
-              width: constraints.maxWidth * 0.5,
+              width: constraints.maxWidth * 0.6,
               decoration: BoxDecoration(
                 gradient: const LinearGradient(
                   colors: [

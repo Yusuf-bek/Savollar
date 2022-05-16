@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:savollar/core/components/size_config/size_config.dart';
 import 'package:savollar/core/widgets/category_widget.dart';
@@ -14,7 +15,9 @@ class HomePage extends StatelessWidget {
           child: SingleChildScrollView(
             child: Column(
               children: [
-                const SizedBox(height: 10,),
+                const SizedBox(
+                  height: 10,
+                ),
                 CategoryContainer(
                   key: UniqueKey(),
                   colorsToGradient: const [
@@ -22,7 +25,7 @@ class HomePage extends StatelessWidget {
                     Colors.redAccent,
                   ],
                   assetImagePath: "assets/category_icons/colba.png",
-                  nameCategory: "Chemistry",
+                  nameCategory: "Chemistry".tr(),
                   onPressedPlayIcon: () {
                     Navigator.pushNamed(context, "/solve");
                   },
@@ -34,8 +37,10 @@ class HomePage extends StatelessWidget {
                     Colors.blue,
                   ],
                   assetImagePath: "assets/category_icons/biology.png",
-                  nameCategory: "Biology",
-                  onPressedPlayIcon: () {},
+                  nameCategory: "Biology".tr(),
+                  onPressedPlayIcon: () {
+                    context.setLocale(const Locale('uz', 'UZ'));
+                  },
                 ),
                 SizedBox(
                   height: getHeightConfig(10),
@@ -45,7 +50,9 @@ class HomePage extends StatelessWidget {
                   colorsToGradient: const [Colors.blueAccent, Colors.redAccent],
                   assetImagePath: "assets/category_icons/dart.png",
                   nameCategory: "Dart",
-                  onPressedPlayIcon: () {},
+                  onPressedPlayIcon: () {
+                    context.setLocale(const Locale("ru", "RU"));
+                  },
                 ),
                 SizedBox(
                   height: getHeightConfig(20),

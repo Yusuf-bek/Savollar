@@ -74,7 +74,7 @@ class QuestionCardWidget extends StatelessWidget {
             width: getWidthConfig(2),
           ),
         ),
-        child: Text(optionText),
+        child: Text(optionText, style: const TextStyle(color: Colors.black),),
       ),
     );
   }
